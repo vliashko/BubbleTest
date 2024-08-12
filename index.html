@@ -116,6 +116,14 @@
     document.body.appendChild(script);
 
     // API call function
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors({
+    origin: 'https://vliashko.github.io' // Your client's domain
+}));
+    
 function registerUser(telegramId, username, referralCode) {
   fetch(`https://cors-anywhere.herokuapp.com/https://localhost:51937/api/users`, {
     method: 'POST',
