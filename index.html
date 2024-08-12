@@ -114,45 +114,6 @@
       });
     };
     document.body.appendChild(script);
-
-    // API call function
-function registerUser(telegramId, username, referralCode) {
-  fetch(`https://localhost:51937/api/users`, {
-    method: 'POST',
-    headers: {
-      'accept': '*/*',
-      'X-Api-Key': '433490a8-6d4b-4868-bbed-b48468b7085e',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      telegramId: telegramId,
-      username: username,
-      referralCode: referralCode
-    })
-  }).then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  }).then(data => {
-    console.log('User registered:', data);
-  }).catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
-}
-
-
-    // Obtain Telegram Web App data
-    window.Telegram.WebApp.ready();
-    const telegramUser = window.Telegram.WebApp.initDataUnsafe;
-
-    // Call the API to register user
-    if (telegramUser) {
-      const telegramId = telegramUser.id; // Replace with actual Telegram ID retrieval
-      const username = telegramUser.username || 'unknown'; // Replace with actual username retrieval
-      const referralCode = "IAPDEMG7331462AA"; // Your referral code
-      registerUser(telegramId, username, referralCode);
-    }
   </script>
 </body>
 </html>
