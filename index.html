@@ -99,7 +99,7 @@
     
     loadingBar.style.display = "block";
 function registerUser(telegramId, username, referralCode) {
-  fetch(https://localhost:8081/api/users, {
+  fetch('https://localhost:8081/api/users', { // кавычки вокруг URL
     method: 'POST',
     headers: {
       'accept': '*/*',
