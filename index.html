@@ -96,12 +96,43 @@
       canvas.style.width = "100%";
       canvas.style.height = "100%";
     }
-
+    
     loadingBar.style.display = "block";
-
+function registerUser(telegramId, username, referralCode) {
+  fetch(https://localhost:8081/api/users, {
+    method: 'POST',
+    headers: {
+      'accept': '*/*',
+      'X-Api-Key': '433490a8-6d4b-4868-bbed-b48468b7085e',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      telegramId: telegramId,
+      username: username,
+      referralCode: referralCode
+    })
+  }).then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  }).then(data => {
+    console.log('User registered:', data);
+  }).catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+}
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
+      window.Telegram.WebApp.ready();
+    const telegramUser = window.Telegram.WebApp.initDataUnsafe;
+ if (telegramUser) {
+      const telegramId = telegramUser.id; // Replace with actual Telegram ID retrieval
+      const username = telegramUser.username || 'unknown'; // Replace with actual username retrieval
+      const referralCode = "IAPDEMG7331462AA"; // Your referral code
+      registerUser(telegramId, username, referralCode);
+    }
       createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
       }).then((unityInstance) => {
