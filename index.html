@@ -124,14 +124,6 @@ function registerUser(telegramId, username, referralCode) {
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
-      window.Telegram.WebApp.ready();
-    const telegramUser = window.Telegram.WebApp.initDataUnsafe;
- if (telegramUser) {
-      const telegramId = telegramUser.id; // Replace with actual Telegram ID retrieval
-      const username = telegramUser.username || 'unknown'; // Replace with actual username retrieval
-      const referralCode = "IAPDEMG7331462AA"; // Your referral code
-      registerUser(telegramId, username, referralCode);
-    }
       createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
       }).then((unityInstance) => {
