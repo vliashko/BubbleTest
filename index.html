@@ -128,7 +128,7 @@ function registerUser(telegramId, username, referralCode) {
     const telegramUser = window.Telegram.WebApp.initDataUnsafe.user;
     if (telegramUser) {
       const telegramId = telegramUser.id; // Замените на актуальное получение Telegram ID
-      const referrer = document.referrer;
+      const referrer = window.Telegram.WebApp.initDataUnsafe.start_param;
 	  console.log("HIFromHTML");
 	  console.log(referrer);
 	  console.log(telegramId + "Html");
