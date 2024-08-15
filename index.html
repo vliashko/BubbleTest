@@ -124,18 +124,7 @@ function registerUser(telegramId, username, referralCode) {
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
-      
-    const telegramUser = window.Telegram.WebApp.initDataUnsafe.user;
-    if (telegramUser) {
-      const telegramId = telegramUser.id; // Замените на актуальное получение Telegram ID
-      const referrer = window.Telegram.WebApp.initDataUnsafe.start_param;
-	  console.log("HIFromHTML");
-	  console.log(referrer);
-	  console.log(telegramId + "Html");
-      const username = telegramUser.username || 'unknown'; // Замените на актуальное получение username
-      const referralCode = "IAPDEMG7331462AA"; // Ваш реферальный код
-      registerUser(telegramId,username,referralCode);
-    }
+    console.log("No cache check");
       
       createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
