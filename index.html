@@ -44,6 +44,9 @@
   </div>
   <script src="Build/bubblecookweb.loader.js"></script>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+  <script src="payment.js" defer></script>
+
   <script>
     var container = document.querySelector("#unity-container");
     var canvas = document.querySelector("#unity-canvas");
@@ -98,29 +101,7 @@
     }
     
     loadingBar.style.display = "block";
-function registerUser(telegramId, username, referralCode) {
-  fetch('https://localhost:8081/api/users', { // кавычки вокруг URL
-    method: 'POST',
-    headers: {
-      'accept': '*/*',
-      'X-Api-Key': '433490a8-6d4b-4868-bbed-b48468b7085e',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      telegramId: telegramId,
-      username: username,
-      referralCode: referralCode
-    })
-  }).then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-  }).then(data => {
-    console.log('User registered:', data);
-  }).catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
-}
+
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
@@ -128,8 +109,6 @@ function registerUser(telegramId, username, referralCode) {
       const telegramUser = window.Telegram.WebApp.initDataUnsafe.user;
     if (telegramUser) {
       const telegramId = telegramUser.id; // Замените на актуальное получение Telegram ID
-	  console.log("HIFromHTML121");
-	  console.log(telegramId);
       const referralCode = window.Telegram.WebApp.initDataUnsafe.start_param;
       const username = telegramUser.username || 'unknown'; // Замените на актуальное получение username
       console.log("Updated" + referralCode);
