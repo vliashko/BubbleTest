@@ -27,7 +27,7 @@ async function purchaseTON(data) {
     if (!window.tonConnectUI) {
         window.tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             manifestUrl:
-                'https://lucky-tg.s3.eu-central-1.amazonaws.com/manifest.json',
+                'https://github.com/vliashko/BubbleTest/blob/master/manifest.json',
             buttonRootId: 'ton-connect',
         });
 
