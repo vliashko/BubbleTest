@@ -17,7 +17,6 @@
         <div id="unity-progress-bar-full"></div>
       </div>
     </div>
-    <div id="unity-warning"></div>
   </div>
   <script src="Build/bubblecookweb.loader.js"></script>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -30,25 +29,6 @@
     var canvas = document.querySelector("#unity-canvas");
     var loadingBar = document.querySelector("#unity-loading-bar");
     var progressBarFull = document.querySelector("#unity-progress-bar-full");
-    var warningBanner = document.querySelector("#unity-warning");
-
-    function unityShowBanner(msg, type) {
-      function updateBannerVisibility() {
-        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-      }
-      var div = document.createElement('div');
-      div.innerHTML = msg;
-      warningBanner.appendChild(div);
-      if (type == 'error') div.style = 'background: red; padding: 10px;';
-      else {
-        if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-        setTimeout(function() {
-          warningBanner.removeChild(div);
-          updateBannerVisibility();
-        }, 5000);
-      }
-      updateBannerVisibility();
-    }
 
     var buildUrl = "Build";
     var loaderUrl = buildUrl + "/bubblecookweb.loader.js";
@@ -60,7 +40,7 @@
       companyName: "DefaultCompany",
       productName: "Cook Merge Bubbles",
       productVersion: "1.0.3",
-      showBanner: unityShowBanner,
+      showBanner: false,
     };
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
