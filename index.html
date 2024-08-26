@@ -19,9 +19,6 @@
     </div>
     <div id="unity-warning"></div>
     <div id="unity-footer">
-      <div id="unity-webgl-logo"></div>
-      <div id="unity-fullscreen-button"></div>
-      <div id="unity-build-title">Cook Merge Bubbles</div>
     </div>
   </div>
   <script src="Build/bubblecookweb.loader.js"></script>
@@ -35,7 +32,6 @@
     var canvas = document.querySelector("#unity-canvas");
     var loadingBar = document.querySelector("#unity-loading-bar");
     var progressBarFull = document.querySelector("#unity-progress-bar-full");
-    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
     var warningBanner = document.querySelector("#unity-warning");
 
     function unityShowBanner(msg, type) {
@@ -127,9 +123,6 @@
         window.UNITY_INSTANCE = unityInstance;
         loadingBar.style.display = "none";
         container.style.display = 'block';
-        fullscreenButton.onclick = () => {
-          unityInstance.SetFullscreen(1);
-        };
       }).catch((message) => {
         alert(message);
       });
