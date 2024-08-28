@@ -9,6 +9,7 @@ body {
 
 h1 {
   position: relative;
+  z-index: 1000;
   margin: 0 auto;
   top: 25vh;
   width: 100vw;
@@ -21,9 +22,12 @@ h1 {
 }
 
 #cooking {
-  position: relative;
+  position: absolute;
+  z-index: 1000;
   margin: 0 auto;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 75vh;
   height: 75vh;
   overflow: hidden;
