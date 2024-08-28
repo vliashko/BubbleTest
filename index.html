@@ -29,8 +29,8 @@
     </div>
   </div>
 
-  <div id="unity-container" style="display: none;">
-    <canvas id="unity-canvas" width=1080 height=1920 style="width: 100%; height: 100%; display: none;"></canvas>
+  <div id="unity-container">
+    <canvas id="unity-canvas" width=1080 height=1920 style="width: 100%; height: 100%;"></canvas>
     <div id="unity-loading-bar">
       <div id="unity-logo"></div>
       <div id="unity-progress-bar-empty">
@@ -121,6 +121,7 @@
       }).then((unityInstance) => {
         window.UNITY_INSTANCE = unityInstance;
         loadingBar.style.display = "none";
+        container.style.display = 'block';
 
         document.querySelector("h1").textContent = "Preparing bubbles..."
       }).catch((message) => {
