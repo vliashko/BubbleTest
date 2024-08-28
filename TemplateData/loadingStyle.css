@@ -6,6 +6,12 @@ body {
   width: 100vw;
   overflow: hidden;
 }
+#loadcontainer{
+  background-color: #ffde6b;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
 
 h1 {
   position: relative;
@@ -22,7 +28,6 @@ h1 {
 }
 
 #cooking {
-  background-color: #ffde6b;
   position: absolute;
   z-index: 1000;
   margin: 0 auto;
