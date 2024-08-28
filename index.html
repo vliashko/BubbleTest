@@ -123,9 +123,7 @@
         loadingBar.style.display = "none";
         container.style.display = 'block';
 
-        document.querySelector("h1").style.display = "none";
-        document.querySelector("#cooking").style.display = "none";
-
+        document.querySelector("h1").textContent = "Preparing bubbles..."
       }).catch((message) => {
         alert(message);
       });
