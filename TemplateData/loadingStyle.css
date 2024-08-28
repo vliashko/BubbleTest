@@ -22,6 +22,7 @@ h1 {
 }
 
 #cooking {
+  background-color: #ffde6b;
   position: absolute;
   z-index: 1000;
   margin: 0 auto;
