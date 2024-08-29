@@ -85,7 +85,6 @@
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
-    console.log("No cache check");
       const telegramUser = window.Telegram.WebApp.initDataUnsafe.user;
     if (telegramUser) {
       const telegramId = telegramUser.id; // Замените на актуальное получение Telegram ID
