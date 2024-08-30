@@ -54,17 +54,17 @@
     var progressBarFull = document.querySelector("#unity-progress-bar-full");
 
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/bubblecookweb.loader.js";
-    var config = {
-      dataUrl: buildUrl + "/bubblecookweb.data.unityweb",
-      frameworkUrl: buildUrl + "/bubblecookweb.framework.js.unityweb",
-      codeUrl: buildUrl + "/bubblecookweb.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
-      companyName: "DefaultCompany",
-      productName: "Cook Merge Bubbles",
-      productVersion: "1.0.3",
-      showBanner: false,
-    };
+      var loaderUrl = buildUrl + "/bubblecookweb.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/bubblecookweb.data.gz",
+        frameworkUrl: buildUrl + "/bubblecookweb.framework.js.gz",
+        codeUrl: buildUrl + "/bubblecookweb.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Cook Merge Bubbles",
+        productVersion: "1.0.3",
+        showBanner: unityShowBanner,
+      };
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       var meta = document.createElement('meta');
