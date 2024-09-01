@@ -124,6 +124,7 @@
 
         window.onbeforeunload = () => {
           unityInstance.SendMessage("CloseService", "CloseCallback");
+          return "Are you sure to leave this page?";
 }
 
         document.querySelector("h1").textContent = "Finishing bubbles..."
