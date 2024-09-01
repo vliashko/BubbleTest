@@ -122,6 +122,10 @@
         window.UNITY_INSTANCE = unityInstance;
         container.style.display = 'block';
 
+        window.onbeforeunload = () => {
+          unityInstance.SendMessage("CloseService", "CloseCallback");
+}
+
         document.querySelector("h1").textContent = "Finishing bubbles..."
       }).catch((message) => {
         alert(message);
