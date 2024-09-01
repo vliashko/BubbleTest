@@ -122,12 +122,8 @@
         window.UNITY_INSTANCE = unityInstance;
         container.style.display = 'block';
 
-        window.onbeforeunload = () => {
-          unityInstance.SendMessage("CloseService", "CloseCallback");
-          console.log("OnBeforeUnload");
-}
-
       window.onunload = ()=>{
+        unityInstance.SendMessage("CloseService", "CloseCallback");
         console.log("Exiting");
       }
 
