@@ -124,8 +124,12 @@
 
         window.onbeforeunload = () => {
           unityInstance.SendMessage("CloseService", "CloseCallback");
-          return "Are you sure to leave this page?";
+          console.log("OnBeforeUnload");
 }
+
+      window.onunload = ()=>{
+        console.log("Exiting");
+      }
 
         document.querySelector("h1").textContent = "Finishing bubbles..."
       }).catch((message) => {
