@@ -90,8 +90,8 @@
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
-      const platform = window.Telegram.WebApp.platform;
-      if(platform !== "ios" || platform !== "android"){
+      var platform = window.Telegram.WebApp.platform.toLowerCase();
+      if(platform != "ios" || platform != "android"){
         mobileOnlyScreen.style.display = "block";
         return;
       }
