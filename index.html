@@ -92,7 +92,7 @@
     script.onload = () => {
       var platform = window.Telegram.WebApp.platform.toLowerCase();
       if(platform != "ios" && platform != "android"){
-        mobileOnlyScreen.style.display = "block";
+        mobileOnlyScreen.style.display = "flex";
         return;
       }
       const telegramUser = window.Telegram.WebApp.initDataUnsafe.user;
