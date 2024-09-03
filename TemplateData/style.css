@@ -29,7 +29,7 @@ body {  padding: 0;margin: 0;
   z-index: 10000;
   display: none;
   
-  background: linear-gradient(180deg, #4dcdfb, #1ba5db);
+  background: linear-gradient(180deg, #009af0, #43e3f9);
 }
 #mobileOnlyScreen img {
   max-width: 100%;
