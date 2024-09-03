@@ -21,9 +21,6 @@ body {  padding: 0;margin: 0;
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display:none }
 #mobileOnlyScreen{
   position:absolute;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Чтобы скрыть часть изображения, если оно выходит за границы */
 }
