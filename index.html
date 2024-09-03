@@ -38,7 +38,7 @@
   </div>
 
   <div id = "mobileOnlyScreen">
-
+    <img src="TemplateData/mobileOnly.jpeg">
   </div>
 
   <div id="unity-container">
@@ -91,7 +91,7 @@
     script.src = loaderUrl;
     script.onload = () => {
       var platform = window.Telegram.WebApp.platform.toLowerCase();
-      if(platform != "ios" || platform != "android"){
+      if(platform != "ios" && platform != "android"){
         mobileOnlyScreen.style.display = "block";
         return;
       }
