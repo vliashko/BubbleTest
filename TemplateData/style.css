@@ -21,8 +21,8 @@ body {  padding: 0;margin: 0;
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
 #mobileOnlyScreen{
   position:absolute;
-  width: 600px;
-  height: 900px;
+  width: 200px;
+  height: 600px;
   z-index:10000;
   display: none;
   background: url('mobileOnly.jpeg')
