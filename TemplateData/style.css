@@ -32,7 +32,7 @@ body {  padding: 0;margin: 0;
 #mobileOnlyScreen img {
   max-width: 100%;
   max-height: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
   display: block;
   object-fit: contain; /* Или object-fit: cover; если хотите, чтобы изображение занимало весь контейнер, но могло обрезаться */
