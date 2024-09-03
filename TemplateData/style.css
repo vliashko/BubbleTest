@@ -37,5 +37,4 @@ body {  padding: 0;margin: 0;
   height: auto;
   display: block;
   object-fit: contain; /* Или object-fit: cover; если хотите, чтобы изображение занимало весь контейнер, но могло обрезаться */
-  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.5);
 }
