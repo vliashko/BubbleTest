@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
 
 body {
-  background-color: #ffde6b;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
 }
-#loadcontainer{
+#loadcontainer {
   position: absolute;
-  background-color: #ffde6b;
   height: 100vh;
   width: 100vw;
   z-index: 1000;
@@ -16,6 +14,17 @@ body {
   top: 0;
   transition: opacity 0.2s ease-in-out;
   opacity: 1;
+  background-image: url("kitchen-background.png");
+  background-repeat: repeat;
+}
+
+#loadcontainer-inner {
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+  z-index: 1000;
+  margin: 0 auto;
+  top: 0;
 }
 
 #loadcontainer.fade-out {
@@ -28,12 +37,19 @@ h1 {
   top: 25vh;
   width: 100vw;
   text-align: center;
-  font-family: 'Amatic SC';
+  font-family: "Amatic SC";
   font-size: 6vh;
   color: #333;
-  opacity: .75;
+  opacity: 0.75;
   z-index: 1000;
   animation: pulse 2.5s linear infinite;
+}
+
+h2.special {
+  font-family: "Amatic SC";
+  color: #333;
+  opacity: 1;
+  z-index: 1000;
 }
 
 #cooking {
@@ -44,7 +60,7 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   width: 75vh;
-  height: 75vh;
+  height: 50vh;
   z-index: 1000;
   overflow: hidden;
 }
@@ -52,7 +68,7 @@ h1 {
 #cooking .bubble {
   position: absolute;
   border-radius: 100%;
-  box-shadow: 0 0 .25vh rgba(51, 51, 51, 0.1);
+  box-shadow: 0 0 0.25vh rgba(51, 51, 51, 0.1);
   opacity: 0;
 }
 
@@ -62,7 +78,7 @@ h1 {
   width: 2.5vh;
   height: 2.5vh;
   background-color: rgba(51, 51, 51, 0.93);
-  animation: bubble 2s cubic-bezier(.53, .16, .39, .96) infinite;
+  animation: bubble 2s cubic-bezier(0.53, 0.16, 0.39, 0.96) infinite;
 }
 
 #cooking .bubble:nth-child(2) {
@@ -71,7 +87,7 @@ h1 {
   width: 2vh;
   height: 2vh;
   background-color: rgba(51, 51, 51, 0.97);
-  animation: bubble 2s ease-in-out .35s infinite;
+  animation: bubble 2s ease-in-out 0.35s infinite;
 }
 
 #cooking .bubble:nth-child(3) {
@@ -80,7 +96,7 @@ h1 {
   width: 1.5vh;
   height: 1.5vh;
   background-color: #333;
-  animation: bubble 1.5s cubic-bezier(.53, .16, .39, .96) .55s infinite;
+  animation: bubble 1.5s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
 }
 
 #cooking .bubble:nth-child(4) {
@@ -89,7 +105,7 @@ h1 {
   width: 1.2vh;
   height: 1.2vh;
   background-color: #2e2e2e;
-  animation: bubble 1.8s cubic-bezier(.53, .16, .39, .96) .9s infinite;
+  animation: bubble 1.8s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.9s infinite;
 }
 
 #cooking .bubble:nth-child(5) {
@@ -130,7 +146,7 @@ h1 {
   border-top: 1vh solid #333;
   border-left: 1vh solid transparent;
   border-radius: 100%;
-  transform: rotate(20deg) rotateX(0deg) scale(1.3, .9);
+  transform: rotate(20deg) rotateX(0deg) scale(1.3, 0.9);
 }
 
 #cooking #area #sides #pan {
@@ -244,7 +260,7 @@ h1 {
 
 @keyframes bubble {
   0% {
-    transform: scale(.15, .15);
+    transform: scale(0.15, 0.15);
     top: 80%;
     opacity: 0;
   }
@@ -253,7 +269,7 @@ h1 {
     opacity: 1;
   }
   100% {
-    transform: scale(.33, .33);
+    transform: scale(0.33, 0.33);
     top: 60%;
     opacity: 0;
   }
@@ -262,7 +278,7 @@ h1 {
 @keyframes pulse {
   0% {
     transform: scale(1, 1);
-    opacity: .25;
+    opacity: 0.25;
   }
   50% {
     transform: scale(1.2, 1);
@@ -270,6 +286,247 @@ h1 {
   }
   100% {
     transform: scale(1, 1);
-    opacity: .25;
+    opacity: 0.25;
+  }
+}
+
+/* guide pages styles */
+
+.guide-page-wrapper {
+  position: fixed;
+  z-index: 10000;
+  left: 0%;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 400vw;
+  background-color: white;
+  transition: all 0.5s ease-out;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.guide-page-back {
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("kitchen-background.png");
+  background-repeat: repeat;
+  content: "";
+  opacity: 0.55;
+}
+
+.guide-page {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 15px;
+  height: calc(100vh - 130px);
+  width: calc(100vw - 30px);
+}
+
+.guide-page.page-2 {
+  left: 100vw;
+}
+
+.guide-page.page-3 {
+  left: 200vw;
+}
+
+.guide-page.page-4 {
+  left: 300vw;
+}
+
+.guide-page-title {
+  font-size: 34px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.guide-page-text {
+  font-size: 20px;
+  margin-bottom: auto;
+}
+
+.guide-page-bottom-text {
+  font-size: 20px;
+  color: gray;
+}
+
+.guide-page-gold-text {
+  color: #fb7d58;
+}
+
+.guide-page-green-text {
+  color: rgb(104, 211, 180);
+}
+
+.guide-page-blue-text {
+  color: rgb(0, 183, 255);
+}
+
+.guide-page-img {
+  width: 60vw;
+  margin-bottom: 30px;
+}
+
+.guide-page-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 5vw;
+  transition: all 0.5s ease-out;
+  bottom: 15px;
+  z-index: 1000000;
+  height: 100px;
+  width: 90vw;
+}
+
+.guide-page-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #549bf7;
+  font-size: 20px;
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  outline: inherit;
+}
+
+/* mini game styles */
+.wrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  position: fixed;
+  z-index: 1000;
+  top: 47%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 50vh;
+  min-width: calc(100vw - 50px);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+}
+.cards,
+.card,
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards {
+  height: 400px;
+  width: 400px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cards .card {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  height: calc(100% / 4 - 10px);
+  width: calc(100% / 4 - 10px);
+}
+.card.shake {
+  animation: shake 0.35s ease-in-out;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-13px);
+  }
+  40% {
+    transform: translateX(13px);
+  }
+  60% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+}
+.card .view {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 7px;
+  background: #fff;
+  pointer-events: none;
+  backface-visibility: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s linear;
+}
+.card .front-view img {
+  width: 19px;
+}
+.card .back-view img {
+  max-width: 45px;
+}
+.card .back-view {
+  transform: rotateY(-180deg);
+}
+.card.flip .back-view {
+  transform: rotateY(0);
+}
+.card.flip .front-view {
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 700px) {
+  .cards {
+    height: 350px;
+    width: 350px;
+  }
+  .card .front-view img {
+    width: 17px;
+  }
+  .card .back-view img {
+    max-width: 40px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .cards {
+    height: 300px;
+    width: 300px;
+  }
+  .card .front-view img {
+    width: 15px;
+  }
+  .card .back-view img {
+    max-width: 35px;
   }
 }
