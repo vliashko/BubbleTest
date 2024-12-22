@@ -357,6 +357,7 @@
           .then((unityInstance) => {
             window.UNITY_INSTANCE = unityInstance;
             container.style.display = "block";
+            document.querySelector("#cooking").style.display = "none"
             if(window.Telegram.WebApp.initDataUnsafe.user.language_code == "ru"){
               document.querySelector("h1").textContent = "Заканчиваем готовку";
             }
