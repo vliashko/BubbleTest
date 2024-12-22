@@ -336,8 +336,8 @@
               if (!response.ok) {
                 throw new Error("Network response was not ok");
               }
-              console.log(response);
-              if(response.code == 200){
+              
+              if(response.status == 200){
                 guidePage.style.display = "flex"
               }
             })
