@@ -335,7 +335,6 @@
               if (!response.ok) {
                 throw new Error("Network response was not ok");
               }
-              console.log(response);
               if(response.status === 200){
                 console.log(response.status);
                 guidePage.style.display = "flex"
@@ -358,8 +357,13 @@
           .then((unityInstance) => {
             window.UNITY_INSTANCE = unityInstance;
             container.style.display = "block";
-
-            document.querySelector("h1").textContent = "Finishing bubbles...";
+            if(languageCode == "ru"){
+              document.querySelector("h1").textContent = "Заканчиваем готовку";
+            }
+            else{
+              document.querySelector("h1").textContent = "Finishing bubbles...";
+            }
+            
           })
           .catch((message) => {
             alert(message);
