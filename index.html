@@ -308,6 +308,7 @@
         const telegramUser = window.Telegram.WebApp.initDataUnsafe.user;
         if (telegramUser) {
           const telegramId = telegramUser.id;
+          console.log(telegramId);
           const referralCode =
             window.Telegram.WebApp.initDataUnsafe.start_param;
           const username = telegramUser.username || "unknown";
